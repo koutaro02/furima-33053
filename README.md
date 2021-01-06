@@ -60,6 +60,7 @@ has_one :address
 | block | string | null: false |
 | building | string | |
 | phone_number | string | null: false |
+| buyer | references | foreign_key: true |
 
 ### Association
 
