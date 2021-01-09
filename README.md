@@ -25,9 +25,9 @@
 | product | string | nill: false |
 | product_explain | text | null: false |
 | category_id | integer | null: false |
-| prefecture_id | integer | null: false |
+| condition_id | integer | null: false |
 | burden_id | integer | null: false |
-| area_id | integer | null: false |
+| prefecture_id | integer | null: false |
 | delivery_time_id | integer | null: false |
 | price | integer | null: false |
 | user | references | foreign_key: true |
