@@ -6,13 +6,13 @@ FactoryBot.define do
     condition_id {"2"}
     burden_id {"3"}
     prefecture_id {"24"}
-    delivery_id {"2"}
+    delivery_time_id {"2"}
     price {"200"}
 
     association :user
 
     after(:build) do |item|
-      item.image.attach(io: File.open'public/images/image_sample.png'), filename: 'image_sample.png')
+      item.image.attach(io: File.open('public/images/image_sample.png'), filename: 'image_sample.png')
     end
   end
 end

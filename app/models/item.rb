@@ -12,4 +12,6 @@ class Item < ApplicationRecord
 
   validates :category_id, :condition_id, :burden_id, :prefecture_id, :delivery_time_id, numericality: { other_than: 1 }
   validates :price, presence: true
+  validates :product, presence: true
+  validates :product_explain, presence: true
 end
