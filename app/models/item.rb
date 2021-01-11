@@ -14,4 +14,5 @@ class Item < ApplicationRecord
   validates :price, presence: true
   validates :product, presence: true
   validates :product_explain, presence: true
+  validates :price, numericality: {only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999}
 end
