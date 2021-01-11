@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  has_many :items
+
   with_options presence: true do
     validates :name
     validates :first_name, format: { with: /\A[ぁ-んァ-ヶ一-龥々]+\z/, message: "ユーザー本名は、全角（漢字・ひらがな・カタカナ）での入力が必須です"}
