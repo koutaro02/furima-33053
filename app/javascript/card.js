@@ -14,7 +14,6 @@ const pay = () => {
       exp_year: `20${formData.get("buyer_address[exe_year]")}`,
     };
 
-    console.log(card)
     Payjp.createToken(card,(status, response) => {
       
       if (status == 200) {
