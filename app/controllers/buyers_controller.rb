@@ -4,6 +4,9 @@ class BuyersController < ApplicationController
   def index
     @buyer_address = BuyerAddress.new
     @item = Item.find(params[:item_id])
+    if current_user == @item.user
+      redirect_to root_path
+    end
   end
 
   def create
