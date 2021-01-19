@@ -1,4 +1,6 @@
 class BuyersController < ApplicationController
+  before_action :authenticate_user!, only: [:index, :create]
+
   def index
     @buyer_address = BuyerAddress.new
     @item = Item.find(params[:item_id])
