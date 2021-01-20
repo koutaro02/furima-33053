@@ -73,7 +73,7 @@ RSpec.describe BuyerAddress, type: :model do
       end
 
       it 'blockは半角英字では登録できないこと' do
-        @buyer_address.block = nil
+        @buyer_address.block = 'nagoya1-2'
         @buyer_address.valid?
         expect(@buyer_address.errors.full_messages).to include('Block is invalid. Input full-width characters.')
       end
@@ -94,6 +94,12 @@ RSpec.describe BuyerAddress, type: :model do
         @buyer_address.phone_number = '090012345678'
         @buyer_address.valid?
         expect(@buyer_address.errors.full_messages).to include('Phone number is invalid. Input full-width characters.')
+      end
+
+      it 'phone_numberは英数混合では登録できないこと' do
+        @buyer_address.phone_number = 'abc12345678'
+        @buyer_address.valid?
+        expect(@buyer_address.errors.full_messages).to include("Phone number is invalid. Input full-width characters.")
       end
 
       it 'tokenが空では登録できないこと' do
